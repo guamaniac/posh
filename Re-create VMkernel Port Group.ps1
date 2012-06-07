@@ -1,3 +1,8 @@
+# Re-create the VMkernel port group to address a weird MAC address conflict that might arise between
+# the port group and physical NICs in the infrastructure.
+# re-creating the port group assigns a VMware MAC address
+# Use at your own risk!
+
 $SnapinTest = Get-PSSnapin | Select-String "vmware"
 if ($SnapinTest -eq $null) { Add-PSSnapin *vm* }
 
